@@ -9,6 +9,7 @@
     <version>1.0-SNAPSHOT</version>
     <modules>
         <module>webxml-config</module>
+        <module>java-config</module>
     </modules>
 
     <packaging>pom</packaging>
@@ -21,6 +22,17 @@
     </properties>
 
     <dependencies>
+        <!--DEPENDENCES JERSEY POUR APPLICATION WEB-->
+        <dependency>
+            <groupId>org.glassfish.jersey.containers</groupId>
+            <artifactId>jersey-container-servlet-core</artifactId>
+            <version>3.0.5</version>
+        </dependency>
+        <dependency>
+            <groupId>org.glassfish.jersey.inject</groupId>
+            <artifactId>jersey-hk2</artifactId>
+            <version>3.0.5</version>
+        </dependency>
         <dependency>
             <groupId>org.glassfish.jaxb</groupId>
             <artifactId>jaxb-runtime</artifactId>
@@ -29,6 +41,7 @@
     </dependencies>
     <build>
         <plugins>
+            <!--PLUGIN JETTY POUR LE SERVER-->
             <plugin>
                 <groupId>org.eclipse.jetty</groupId>
                 <artifactId>jetty-maven-plugin</artifactId>
