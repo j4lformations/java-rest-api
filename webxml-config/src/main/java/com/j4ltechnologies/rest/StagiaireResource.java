@@ -44,7 +44,7 @@ public class StagiaireResource {
     }
 
     @GET
-    //@Produces(MediaType.APPLICATION_JSON)
+    @Produces(MediaType.APPLICATION_JSON)
     public List<Stagiaire> stagiaires() {
         return new ArrayList<>(stagiaireBd.values());
     }
