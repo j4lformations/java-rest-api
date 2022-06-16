@@ -10,6 +10,7 @@
     <modules>
         <module>webxml-config</module>
         <module>java-config</module>
+        <module>javaee-config</module>
     </modules>
 
     <packaging>pom</packaging>
@@ -21,24 +22,6 @@
         <maven.compiler.target>17</maven.compiler.target>
     </properties>
 
-    <dependencies>
-        <!--DEPENDENCES JERSEY POUR APPLICATION WEB-->
-        <dependency>
-            <groupId>org.glassfish.jersey.containers</groupId>
-            <artifactId>jersey-container-servlet-core</artifactId>
-            <version>3.0.5</version>
-        </dependency>
-        <dependency>
-            <groupId>org.glassfish.jersey.inject</groupId>
-            <artifactId>jersey-hk2</artifactId>
-            <version>3.0.5</version>
-        </dependency>
-        <dependency>
-            <groupId>org.glassfish.jaxb</groupId>
-            <artifactId>jaxb-runtime</artifactId>
-            <version>4.0.0</version>
-        </dependency>
-    </dependencies>
     <build>
         <plugins>
             <!--PLUGIN JETTY POUR LE SERVER-->

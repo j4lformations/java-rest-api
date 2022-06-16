@@ -1,4 +1,4 @@
-package com.j4ltechnologies.resources;
+package com.j4ltechnologies.rest;
 
 import com.j4ltechnologies.domain.Stagiaire;
 import com.j4ltechnologies.exceptions.NotFoundException;
@@ -57,4 +57,38 @@ public class StagiaireResource {
         return stagiaireBd.get(id);
     }
 
+    @PUT
+    @Path("{id}")
+    public void update(@PathParam("id") Integer id, Stagiaire stagiaire) {
+        Stagiaire courant = stagiaireBd.get(id);
+        if (courant == null) {
+            ErrorMessage message = new ErrorMessage(
+                    "404",
+                    "Le Stagiaire d'id = " + id + " à mettre à jour est introuvable en BDD",
+                    "http://localhost:8080/ws/stagiaires/" + id,
+                    Response.Status.NOT_FOUND
+            );
+            throw new NotFoundException(message);
+        }
+        courant.setPrenom(stagiaire.getPrenom());
+        courant.setDdn(stagiaire.getDdn());
+        courant.setEmail(stagiaire.getEmail());
+        stagiaireBd.put(courant.getId(), courant);
+    }
+
+    @DELETE
+    @Path("{id}")
+    public void delete(@PathParam("id") Integer id) {
+        Stagiaire courant = stagiaireBd.get(id);
+        if (courant == null) {
+            ErrorMessage message = new ErrorMessage(
+                    "404",
+                    "Le Stagiaire d'id = " + id + " à supprimer est introuvable en BDD",
+                    "http://localhost:8080/ws/stagiaires/" + id,
+                    Response.Status.NOT_FOUND
+            );
+            throw new NotFoundException(message);
+        }
+        stagiaireBd.remove(courant.getId());
+    }
 }

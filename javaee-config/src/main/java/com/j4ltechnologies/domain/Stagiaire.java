@@ -3,7 +3,6 @@ package com.j4ltechnologies.domain;
 import jakarta.json.bind.annotation.JsonbDateFormat;
 import jakarta.json.bind.annotation.JsonbProperty;
 import jakarta.json.bind.annotation.JsonbPropertyOrder;
-import jakarta.json.bind.annotation.JsonbTransient;
 
 import java.time.LocalDate;
 import java.time.Period;
