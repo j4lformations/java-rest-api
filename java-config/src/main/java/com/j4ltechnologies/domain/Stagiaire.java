@@ -24,9 +24,6 @@ public class Stagiaire {
     @JsonbDateFormat(locale = "fr_FR", value = "dd-MM-yyyy")
     private LocalDate ddn;
 
-    //@JsonbTransient
-    private int age;
-
     public Stagiaire() {
     }
 
@@ -63,7 +60,7 @@ public class Stagiaire {
     }
 
     public int getAge() {
-        Period age = Period.between(ddn, LocalDate.now());
+        Period age = ddn.until(LocalDate.now());
         return age.getYears();
     }
 }

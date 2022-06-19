@@ -7,6 +7,7 @@
         <groupId>com.j4ltechnologies</groupId>
         <version>1.0-SNAPSHOT</version>
     </parent>
+
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>java-config</artifactId>
@@ -30,6 +31,7 @@
             <artifactId>jersey-hk2</artifactId>
             <version>3.0.5</version>
         </dependency>
+
         <dependency>
             <groupId>org.glassfish.jaxb</groupId>
             <artifactId>jaxb-runtime</artifactId>
@@ -40,6 +42,13 @@
             <artifactId>jersey-media-json-binding</artifactId>
             <version>3.0.5</version>
         </dependency>
-    </dependencies>
 
+        <!--NECESSAIRE DANS UNE CONFIG SANS WEB.XML SI LA VERSION DES SERVLETS EST >= 3-->
+        <dependency>
+            <groupId>jakarta.platform</groupId>
+            <artifactId>jakarta.jakartaee-web-api</artifactId>
+            <version>9.1.0</version>
+            <scope>provided</scope>
+        </dependency>
+    </dependencies>
 </project>

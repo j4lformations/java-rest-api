@@ -10,7 +10,7 @@
 
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>javaee-config</artifactId>
+    <artifactId>jakartaee-config</artifactId>
 
     <packaging>war</packaging>
 
